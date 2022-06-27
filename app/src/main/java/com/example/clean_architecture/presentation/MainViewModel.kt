@@ -34,6 +34,6 @@ class MainViewModel(
 
     fun load() {
         val userName: UserName = getUserNameUseCase.execute()
-        resultLiveMutable.value =  "${userName.firstName} ${userName.lastName}"
+        resultLiveMutable.value = "${userName.firstName} ${userName.lastName}"
     }
 }

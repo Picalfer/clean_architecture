@@ -21,11 +21,11 @@ class UserRepositoryImpl(private val userStorage: UserStorage) : UserRepository 
         return mapToDomain(user)
     }
 
-    private fun mapToStorage(saveParam: SaveUserNameParam) : User {
+    private fun mapToStorage(saveParam: SaveUserNameParam): User {
         return User(firstName = saveParam.name, lastName = "")
     }
 
-    private fun mapToDomain(user: User) : UserName {
+    private fun mapToDomain(user: User): UserName {
         return UserName(firstName = user.firstName, lastName = user.lastName)
     }
 }

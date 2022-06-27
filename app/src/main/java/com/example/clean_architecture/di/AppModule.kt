@@ -6,7 +6,7 @@ import org.koin.dsl.module
 
 val appModule = module {
 
-    viewModel<MainViewModel>{
+    viewModel<MainViewModel> {
         MainViewModel(
             getUserNameUseCase = get(),
             saveUserNameUseCase = get()

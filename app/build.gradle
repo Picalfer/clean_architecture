@@ -36,7 +36,7 @@ android {
 }
 
 dependencies {
-    def lifecycle_version = "2.5.0-rc01"
+    def lifecycle_version = "2.5.0-rc02"
     def koin_version= "3.2.0"
 
     implementation project(path: ':domain')
@@ -58,7 +58,7 @@ dependencies {
 
     // Koin main features for Android
     implementation "io.insert-koin:koin-android:$koin_version"
-    // No more koin-android-viewmodel, koin-android-scope, koin-android-fragment
+    // No more koin-android-viewModel, koin-android-scope, koin-android-fragment
 
     // Java Compatibility
     implementation "io.insert-koin:koin-android-compat:$koin_version"

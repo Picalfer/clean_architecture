@@ -10,10 +10,11 @@ private const val KEY_LAST_NAME = "lastName"
 private const val DEFAULT_LAST_NAME = "Default last name"
 private const val DEFAULT_FIRST_NAME = "Default first name"
 
-class SharedPrefUserStorage(context: Context): UserStorage {// когда у свойств не стои val
+class SharedPrefUserStorage(context: Context) : UserStorage {// когда у свойств не стои val
     // их нельзя использовать в функциях класса
 
-    private val sharedPreferences = context.getSharedPreferences(SHARED_PREFS_NAME, Context.MODE_PRIVATE)
+    private val sharedPreferences =
+        context.getSharedPreferences(SHARED_PREFS_NAME, Context.MODE_PRIVATE)
 
     override fun save(user: User): Boolean {
         sharedPreferences.edit().putString(KEY_FIRST_NAME, user.firstName).apply()
@@ -22,8 +23,10 @@ class SharedPrefUserStorage(context: Context): UserStorage {// когда у с�
     }
 
     override fun get(): User {
-        val firstName = sharedPreferences.getString(KEY_FIRST_NAME, DEFAULT_FIRST_NAME) ?: DEFAULT_FIRST_NAME
-        val lastName = sharedPreferences.getString(KEY_LAST_NAME, DEFAULT_FIRST_NAME) ?: DEFAULT_FIRST_NAME
+        val firstName =
+            sharedPreferences.getString(KEY_FIRST_NAME, DEFAULT_FIRST_NAME) ?: DEFAULT_FIRST_NAME
+        val lastName =
+            sharedPreferences.getString(KEY_LAST_NAME, DEFAULT_FIRST_NAME) ?: DEFAULT_FIRST_NAME
 
         return User(firstName = firstName, lastName = lastName)
     }
